@@ -13,7 +13,7 @@ app.use(cors({origin : "*"}));
     mongoose.connect("mongodb://localhost:27017/userDB");
 
     app.use("/api", router);
-    
+    app.get("/", (req, res) => res.send("Welcome to the api server"));
     app.listen(3000, () => {
         console.log("listening on port 3000...");
     })
